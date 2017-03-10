@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--meta tags must come first-->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Illinois Consulting Foresters, inc., is an association of consulting foresters across Illinois who provide services for timber harvesting, timber sales & marketing, forest management plans, timber appraisal and inventory, timber stand improvement, invasive plant management, and other forestry services."></meta>
+<meta name="keywords" content="Illinois, forester, timber, harvesting, management plan, landowner, consulting"></meta>
+
+
+<title>Illinois Consulting Foresters, inc. - An association of independent, professional foresters.</title>
+
+<!--stylesheets -->
+<link rel="stylesheet" href="bootstrap.min.css" >
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet">
+<link rel="stylesheet" href="leaflet/leaflet.css" />
+<link rel="stylesheet" href="markerclusterer/MarkerCluster.css" />
+<link rel="stylesheet" href="markerclusterer/MarkerCluster.Default.css" />
+<link rel="stylesheet" href="leaflet/leaflet.css" />
+<link rel="stylesheet" href="style.css">
+
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	  <style>
+	  #fixedTopToggledVis {height: 0!important; visibility: hidden;}
+	  #navHeader {background-color: #016a3a!important;}
+	  </style>
+	  
+<![endif]-->
+
+
+</head>
+
+
+<body>
+<script src="jquery-3.1.1.min.js"></script>
+<!--[if lt IE 9]>
+<script src="jquery-compat-3.0.0-alpha1.js"></script>
+<![endif]-->
+<script src="bootstrap.min.js"></script>
+<script src="leaflet/leaflet.js"></script>
+<script src="markerclusterer/leaflet.markercluster.js"></script>
+<script type="text/javascript" src="general.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93074168-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <div id="pageContainer" class="container-fluid">
+    <div id='firstContentRow' class="row">
+      <div class='container-fluid'>
+        <div id="banner2" class="row">
+          <div id="fixedTopToggledVis">
+            <nav class="fixed navbar navbar-default navbar-fixed-top">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="fixed-button navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                  <a style="padding: 5px;" class="navbar-brand" href="#"><img style="height: 40px; width: auto;" src="images/logo_icon_color.png"></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="fixedNav collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <div class="">
+
+                    <ul class="nav navbar-nav fixed" id="">
+                      <li><a href="#aboutAdj">about</a></li>
+                      <li><a href="#forestersAdj">foresters</a></li>
+                      <li class="dropdown fixedDropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">services<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#timbersaleslink" style="color: #016a3a;">timber sales<br>& marketing</a></li>
+                          <li><a href="#managementplanslink" style="color: #016a3a;">forest management<br>plans</a></li>
+                          <li><a href="#tsilink" style="color: #016a3a;">timber stand<br>improvements</a></li>
+                          <li><a href="#treeplantinglink" style="color: #016a3a;">tree planting<br>& reforestation</a></li>
+                          <li><a href="#invasivespecieslink" style="color: #016a3a;">invasive species<br>management</a></li>
+                          <li><a href="#otherserviceslink" style="color: #016a3a;">other forestry<br>services</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#faqAdj">faq</a></li>
+                      <li><a href="#newsAdj">news</a></li>
+                      <li class="dropdown fixedDropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">more<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#fm101Adj" style="color: #016a3a;">forest<br> management<Br> 101</a></li>
+                          <li><a href="#membershipAdj" style="color: #016a3a;">membership</a></li>
+                          <li><a href="#resourcesAdj" style="color: #016a3a;">resources</a></li>
+                          <li><a href="#contactAdj" style="color: #016a3a;">contact</a></li>
+
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+                <!-- /.navbar-collapse -->
+              </div>
+              <!-- /.container-fluid -->
+            </nav>
+          </div>
+          <div id="navHeader">
+            <nav class="navbar topBannerNav">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="nav-button navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span> 
+		      </button>
+                  <a class="hidden-lg hidden-md hidden-sm" style="position: absolute; " class="navbar-brand" href="#"><img style="height: 60px; width: auto;" src="images/logo_icon_color.png"></a>
+                </div>
+                <div class="topBannerNavCollapse collapse navbar-collapse container-fluid" id="myNavbar">
+                  <div class="row">
+                    <div class="col-sm-5 col-md-5 col-lg-5" id="leftNavDiv">
+                      <ul class="nav navbar-nav navbar-right" id="leftNavUL">
+                        <li><a href="#aboutAdj">about</a></li>
+                        <li><a href="#forestersAdj">foresters</a></li>
+                        <li class="dropdown fixedDropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">services<span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="#timbersaleslink" style="color: #016a3a;">timber sales<br>& marketing</a></li>
+                            <li><a href="#managementplanslink" style="color: #016a3a;">forest management<br>plans</a></li>
+                            <li><a href="#tsilink" style="color: #016a3a;">timber stand<br>improvements</a></li>
+                            <li><a href="#treeplantinglink" style="color: #016a3a;">tree planting<br>& reforestation</a></li>
+                            <li><a href="#invasivespecieslink" style="color: #016a3a;">invasive species<br>management</a></li>
+                            <li><a href="#otherserviceslink" style="color: #016a3a;">other forestry<br>services</a></li>
+                          </ul>
+                        </li>
+
+                      </ul>
+                    </div>
+                    <div class="col-sm-2 col-md-2 col-lg-2 hidden-xs">
+                      <div id="logoContainer">
+                        <a href="#"><img id="logo" src="images/logo.png"></a>
+                      </div>
+                      <!-- end #logo -->
+                    </div>
+                    <div class="col-sm-5 col-md-5 col-lg-5" id="rightNavDiv">
+                      <ul class="nav navbar-nav navbar-left" id="rightNavUL">
+                        <li><a href="#faqAdj">faq</a></li>
+                        <li><a href="#newsAdj">news</a></li>
+                        <li class="dropdown navDropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">more<span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="#fm101Adj" style="color: #016a3a;">forest<Br>management<br>101</a></li>
+                            <li><a href="#membershipAdj" style="color: #016a3a;">membership</a></li>
+                            <li><a href="#resourcesAdj" style="color: #016a3a;">resources</a></li>
+                            <li><a href="#contactAdj" style="color: #016a3a;">contact</a></li>
+
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+
+
+          </div>
+          <!-- end #navHeader -->
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div id="topPad" class="row">
+          <!--<div id="topPadLeftSpace" class="col-xs-12 col-sm-12 col-md-6 col-lg-6"></div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="findForesterDiv" class="form-group">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-right" style="text-align: right; margin-right: -20px; color: white; ">
+                  <span>Find Forester:</span>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+                  <input type="text" id="findForesterInput" class="form-control" id="usr">
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-left" style="text-align: left;margin-left: -20px; ">
+                  <button type="button" style="padding-top: 0px;" id="findForesterButton" class="btn btn-default">Find</button>
+                </div>
+              </div>
+            </div>
+          </div>-->
+        </div>
+      </div>
+    </div>
+
+
+    <div id="actualContent1" class="row">
+    <!--[if lt IE 9]>
+		<div style="color: red; border: 2px solid red; font-family: sans-serif; font-size: 18px;" id="ieWarningDiv">WARNING: You are viewing this page in Internet Explorer 8.0 or lower. For best experience, this page should be viewed with a newer version of Internet Explorer or another internet browser.</div>
+	  
+<![endif]-->
+      <div id="aboutDiv" class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+        <div class="insideAboutDiv">
+          <div id="aboutAdj"></div>
+          <h1 id="aboutLink" class="h1TextGreen text-left">about</h1>
+          <div class="container-fluid">
+            <div class="row well">
+              <div class="aboutPic"><img class="img-rounded" src="images/illinois_forester.JPG" alt="Illinois Consulting Forester conducting timber inventory and appraisal" title="Trained and experienced professional consulting foresters"></div>
+              <div style="padding-right: 0px; margin-right: -5px;">
+                <h3 class="emphasisText text-left">Professional foresters.</h3>
+                <p class="text-left pText">Illinois Consulting Foresters, Inc., member foresters are seasoned professionals formally trained to practice forestry. These consulting foresters hold university degrees in forestry, years of experience, a wide range of certifications
+                  and licenses, and the shared knowledge base that ICF facilitates across the state of Illinois.</p>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row well">
+              <div class="aboutPic"><img class="img-rounded" src="images/enjoying_woods.jpg" alt="Illinois landowners enjoying woodland." title="Illinois Consulting Foresters focus on representing the landowner"></div>
+              <div class="" style="padding-right: 0px; margin-right: -5px;">
+                <h3 class="emphasisText text-left">Representing you.</h3>
+                <p class="text-left pText">Illinois Consulting Foresters are independent professionals whose primary objective is to represent the forest landowner. Consulting foresters are not loggers. Consulting foresters are independent professionals with a toolbox aimed at maximizing your
+                  forest income, while protecting and improving the quality of your forestland.</p>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row well">
+              <div class="aboutPic"><img class="img-rounded" src="images/logs_on_landing.jpg" alt="harvested Illinois logs on log landing" title="Generate income with Illinois timber"></div>
+              <div class="" style="padding-right: 0px; margin-right: -5px;">
+                <h3 class="emphasisText text-left">Maximizing Your Income.</h3>
+                <p class="text-left pText">An appropriately managed forestland should provide the returns of other investments of similar risk. Unfortunately, underpriced timber sales and destructive forestry practices often limit this earnings potential from forest acreage. Professional
+                  consulting foresters are trained and experienced at marketing timber among timber buyers for best returns, while also providing the guidance to manage and improve timber for sustained investment returns over generations.</p>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row well">
+              <div class="aboutPic"><img class="img-rounded" src="images/wildflower_pristine_woodland.jpg" alt="spring wildflower from a high-quality forest" title="Good forestry, protecting forest health and quality"></div>
+              <div class="" style="padding-right: 0px; margin-right: -5px;">
+                <h3 class="emphasisText text-left">Protecting Your Land.</h3>
+                <p class="text-left pText">Proper forest management, including timber harvesting, should not destroy your land. Consulting foresters are professionals who can work with you to protect your land during timber harvesting and manage your land for long-term improvement,
+                  including better tree species mix, better timber quality, and better wildlife habitat.</p>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row well">
+              <h3 class="emphasisText text-left">Inquire Today.</h3>
+              <p class="text-left pText">Professional consulting foresters can assist with any acreage from 5 acres to 5,000 acres. A number of tax benefits and cost-share incentives are available to finance your professional forestry assistance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1 class="h1TextGreen text-left">services</h1>
+      <div id="pictureRow" class="col-lg-5 col-md-5 col-sm-5 col-xs-12 text-center">
+        <div id="" class="picCell col-xs-6 col-sm-6 col-md-6 col-lg-6 thumbnail ">
+          <a title="Timber Sales & Marketing" href='#timbersaleslink'>
+            <div class="innerPicCell">
+              <img class="squarePic" src="images/timber_sale.jpg" alt="timber sale in progress" title="Timber Sales & Marketing">
+              <div id="" class='h1Text text-center'>
+                <div class="centerThis">
+                  <h4>Timber Sales and Marketing</h4>
+
+                  <p><small><a title="Timber Sales & Marketing" href='#timbersaleslink'>[Read more]</a></small></p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div id="" class="picCell col-xs-6 col-sm-6 col-md-6 col-lg-6 thumbnail">
+          <a href='#managementplanslink' title="Forest Management Plans">
+            <div class="innerPicCell">
+              <img class="squarePic" src="images/forest_management_plan.jpg" alt="scenic forest during forest management plan inventory" title="Forest Management Plans">
+              <div id="" class='h1Text text-center'>
+                <div class="centerThis">
+                  <h4>Forest Management Plans</h4>
+                  <p><small><a href='#managementplanslink' title="Forest Management Plans">[Read more]</a></small></p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div id="" class="picCell col-xs-6 col-sm-12 col-md-6 col-lg-6 thumbnail">
+          <a href='#treeplantinglink' title="Tree Planting & Reforestation">
+            <div class="innerPicCell">
+              <img class="squarePic" src="images/tree_planting.jpg" alt="tree planting in progress" title="Tree Planting & Reforestation">
+              <div id="" class='h1Text text-center'>
+                <div class="centerThis">
+                  <h4>Tree Planting and Reforestation</h4>
+                  <p><small><a title="Tree Planting & Reforestation" href='#treeplantinglink'>[Read more]</a></small></p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div id="" class="picCell col-xs-6 col-sm-12 col-md-6 col-lg-6 thumbnail">
+          <a title="Timber Stand Improvement" href='#tsilink'>
+            <div class="innerPicCell">
+              <img class="squarePic" src="images/timber_stand_improvement.jpg" alt="timber stand improvement in progress" title="Timber Stand Improvement">
+              <div id="" class='h1Text text-center'>
+                <div class="centerThis">
+                  <h4>Timber Stand Improvements</h4>
+                  <p><small><a href='#tsilink' title="Timber Stand Improvement">[Read more]</a></small></p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div id="" class="picCell col-xs-6 col-sm-6 col-md-6 col-lg-6 thumbnail">
+          <a href='#invasivespecieslink'>
+            <div class="innerPicCell">
+              <img class="squarePic" alt="forest infested with invasive plant Oriental bittersweet" title="Invasive Plant Management" src="images/invasive_species_management.jpg">
+              <div id="" class='h1Text text-center'>
+                <div class="centerThis">
+                  <h4>Invasive Species Management</h4>
+                  <p><small><a title="Invasive Plant Management" href='#invasivespecieslink'>[Read more]</small></p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div id="" class="picCell col-xs-6 col-sm-6 col-md-6 col-lg-6 thumbnail">
+          <a href='#otherserviceslink' title="Other Services">
+            <div class="innerPicCell">
+              <img class="squarePic" src="images/other_forestry_services.jpg" alt="Illinois forester measuring tree" title="Other Forestry Services">
+              <div id="" class='h1Text text-center'>
+                <div class="centerThis">
+                  <h4>Other Forestry<br>Services</h4>
+                  <p><small><a href='#otherserviceslink' title="Other Forestry Services">[Read more]</a></small></p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="mapDiv" class="row  text-center" style="background-color: #EFF4F1;">
+      <div id="insideMapDiv" style="background-color: #EFF4F1;">
+        <div id="forestersAdj"></div>
+        <h1 class="h1TextGreen text-left">
+              foresters
+        </h1>
+        <div class='well mapwell'>
+          <div id="innerMapDiv" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <h2 class="h2Green">Map of Foresters</h2>
+            <div id="outerMapId">
+              <div id="mapid">
+                <script type="text/javascript" src="map.js">
+                </script>
+              </div>
+            </div>
+            <div id="heightFix">
+            </div>
+            <!-- end heightFiix div -->
+          </div>
+          <div class="container-fluid col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+            <h2 class="h2Green">List of Foresters</h2>
+            <div id="memberList" class="row">
+              <div id="memberEntries"></div>
+            </div>
+            <!-- end memberList div -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content2" class="row">
+      <div id="servicesDivLeft" class="text-left col-xs-12 col-md-8 col-sm-8 col-lg-8">
+        <div class="newsDiv">
+          <div id="newsAdj"></div>
+          <h1 class="text-left h1TextGreen">news</h1>
+          <div class="well">
+            <h3 class="h2TextGreen">Alert: Special Cost-Share Opportunity for Landowners!</h3>
+            <p>Over the next 5 years, forest landowners in 37 Illinois counties are eligible for enhanced cost-share funding for six forest management practices: timber stand improvement, brush management, herbaceous weed control, prescribed burning, tree/shrub
+              site preparation, tree/shrub establishment. For more information, see this <a href="http://ifdc.nres.illinois.edu/wp-content/uploads/RCPP-Press-Release_7Jan2017.pdf">press release</a> and the <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/il/programs/farmbill/rcpp/?cid=stelprdb1247829">NRCS Regional Conservation Partnership Program site</a>              and contact your nearest consulting forester.</p>
+            <h3 class="h2TextGreen">Next Members Meeting: Summer 2017</h3>
+            <p>The next members meeting of the Illinois Consulting Foresters will be held Friday, August 11, 2017 at 9:00 a.m. The meeting will be at the Comfort Suites 1310 W. Fayette Rd, Effingham, Illinois.</p>
+          </div>
+        </div>
+        <div id="servicesAdj"></div>
+        <h1 class="text-left h1TextGreen">services</h1>
+        <div class="well">
+          <div id="timbersaleslink"></div>
+          <h2 class="h2TextGreen text-center">Timber Sales & Marketing</h2>
+          <div class="bodyImageDiv">
+            <img src="images/timber_sale.jpg" class="img-responsive" alt="timber sale in progress" title="Timber Sales & Marketing">
+            <span class="bodyImageDivCaption">Large-diameter black walnut, free of knots and defects, is Illinois' most prized timber.</span>
+          </div>
+          <p>
+            <h4 class="emphasisText2">A Timber Harvest Happens Once or Twice per Generation.</h4> A high-quality timber harvest may generate significant income and leave the woods in great shape for the next generation. But all-too-often, those landowners inexperienced with selling timber make the mistake of selling timber well below market values
+            while unknowingly agreeing to liquidate their forest's future value. The services of a professional consulting forester are the best way to eliminate these very common mistakes.</p>
+          <p>
+            <h4 class="emphasisText2">Consulting Foresters Oversee Multiple Harvests Each Year.</h4> These foresters regularly monitor the swings of the timber markets and work with timber buyers around Illinois on a daily basis. When it comes time to sell timber, they are your best resource. Whether you own 5 acres or 5,000 acres, the
+            timber sales & marketing services of a professional consulting forester quickly pay dividends. <br> </p>
+          <p>
+            <h4 class="emphasisText2">Market Your Timber.</h4> Services of a professional consulting forester often include developing an inventory of timber to be sold, approximating the value of that timber, and competitively bidding out your timber to the hundreds of licensed Illinois timber buyers. Consulting
+            foresters specialize in knowing Illinois timber markets: how much your timber is worth and which Illinois timber buyers may interested in buying your timber. In a recent Illinois Department of Natural Resources survey of timber sales competitively marketed
+            by a professional forester, the high bid was an of 61% greater than the low bid. In some cases, the high bid was two or three times the value of the low bid!</p>
+          <blockquote>"In a recent Illinois survey of timber sales competitively marketed by a professional forester, the high bid was an of 61% greater than the low bid. In some cases, the high bid was two or three times the value of the low bid!"
+          </blockquote>
+          <div class="bodyImageDiv" style="clear: right;">
+            <img src="images/hollow_damaged_log.jpg" class="img-responsive" alt="a hollow damaged log salvaged during a timber harvest" title="Hollow, Damaged Log Harvested During Illinois Timber Sale">
+            <span class="bodyImageDivCaption">A properly conducted timber harvest will salvage and remove damaged, broken, hollow trees that are competing with your best trees of the future.</span>
+          </div>
+          <p>
+            <h4 class="emphasisText2">Protect Your Woods.</h4> A consulting forester understands how forests grow and mature over time. A timber sale carefully selected and marked by a professional consulting forester will leave a stand of healthy, solid, and desirable trees for the next generation.
+            A "logger's-choice" timber sale will often remove your most desirable trees, and leave a forest of broken, hollow, and undesirable trees for the next generation. Forests do not recover from such damage, and are often left worthless after a
+            few generations of unmanaged harvesting.</p>
+          <blockquote>A timber sale carefully selected and marked by a professional consulting forester will leave a stand of healthy, solid, and desirable trees for the next generation. A "logger's-choice" timber sale will often remove your most desirable trees,
+            and leave a forest stand of broken, hollow, and undesirable trees for the next generation.</blockquote>
+          <p>
+            <h4 class="emphasisText2">Illinois Consulting Foresters, Inc., Member Foresters</h4> offer a range of timber sale selection, marketing, contracting, and administration services. Consider contacting your nearest member forester to assess your timber sale opportunities.</p>
+          <div class="learnMore container-fluid">
+            <div class="">
+              <h5 class="text-left">Further Resources...</h5>
+            </div>
+            <div class="innerResourcesText">
+              <a href="https://www.extension.purdue.edu/extmedia/fnr/fnr-111.pdf" title="Purdue University Publication about Marketing Timber">Purdue University FNR-111: Marketing Timber</a>
+              <p><small>This primer about selling timber from Purdue University recommends employing a professional consulting forester who has experience with timber markets to get top-dollar for your timber.</small></p>
+            </div>
+            <div class="innerResourcesText">
+              <a title="My Land Plan: Difference between Forester and Logger" href="https://mylandplan.org/content/difference-between-forester-and-logger" :>American Forest Foundation: The Difference Between a Forester and a Logger</a>
+              <p><small>While many loggers are talented professionals capable of harvesting your timber safely and professionally, their goal as businessmen and businesswomen is to buy that timber from you at the lowest price. This page from the American Forest Foundation explains the difference between a logger and a professional forester who represents only your interests. </small></p>
+            </div>
+          </div>
+        </div>
+        <div class="well">
+          <div id="managementplanslink"></div>
+          <h2 class="h2TextGreen text-center">Forest Management Plans</h1>
+        <div id="timbersalespic" class="bodyImageDiv">
+			<img src="images/forest_management_plan.jpg" alt="scenic forest during forest management plan inventory" title="Forest Management Plan" class="img-responsive" > 
+			<span class="bodyImageDivCaption">A forest management plan is the first step to caring for your woodland.</span>     
+        </div>
+        <p>
+          <h4 class="emphasisText2">A Guide to Manage Your Timber.</h4> A forest management plan not only includes an inventory and appraisal of your timber, but also guides your management with 10 years of voluntary, time-tested forest management actions that you can take to profit from your
+          forest and improve your woodland. In return for your commitment to conserve and improve your forest, a certified management plan will often result in thousands of dollars of tax and cost-sharing benefits.</p>
+        <p>
+          <h4 class="emphasisText2">An Inventory & Appraisal.</h4> Most foresters can quickly inventory your timber by species and management area, tallying and assessing amount of merchantable timber, age classes, condition, regeneration, and invasive plant and pest problems.
+          Once you have this information, your forester will also be able to appraise your timber according to today's market prices.</p>
+        <p>
+          <h4 class="emphasisText2">Property Tax Benefits.</h4> The Illinois Forestry Development Act guarantees the lowest possible property tax rates for forest properties being managed for timber production. A certified forest management plan is often the only way to reduce
+          or maintain these low rates on your forest property. Over the course of 10 years, a management plan may save you thousands of dollars in property tax bills.</p>
+        <blockquote>"Over the course of 10 years, a management plan may save you thousands of dollars in property tax bills."</blockquote>
+        <p>
+          <h4 class="emphasisText2">Cost-Sharing Resources.</h4> Various federal and state agencies frequently offer cost-share assistance to landowners invested in improving the quality of their woodland acres through timber stand improvement, invasive species management, or
+          other timber and wildlife improvement practices. Cost-share incentives often offset 75% or more of project costs. A certified forest management plan is often the only requirement to be eligible for cost-sharing incentives.</p>
+        <p>
+          <h4 class="emphasisText2"> Get Your Forest Management Plan Today.</h4> In addition to being the first step to improving and profiting from your forest acres, your nearest consulting forester can tailor your plan to suit your forest and financial needs.</p>
+        <div class="learnMore container-fluid">
+          <div class="">
+            <h5 class="text-left">Further Resources...</h5>
+          </div>
+         
+
+
+            <div class="innerResourcesText">
+              <a href="https://www.extension.purdue.edu/extmedia/FNR/FNR-181.pdf" title="Purdue University Forest Planning Publication">Purdue University FNR-181: Planning for the Future</a>
+              <p><small>Learn about common considerations when getting a forest management plan.</small></p>
+            </div>
+         </div>
+       </div>
+       <div class="well">
+       <div id="tsilink"></div>
+        <h2 class="h2TextGreen text-center">Timber Stand Improvement (TSI)</h1>
+        <div id="timbersalespic" class="bodyImageDiv">
+			<img src="images/timber_stand_improvement.jpg" alt="timber stand improvement in progress" title="Timber Stand Improvement" class="img-responsive" > 
+			<span class="bodyImageDivCaption">Timber Stand Improvement means selectively thinning, removing, or deadening your least desirable, invasive, and low-value trees in favor of getting light to your best "crop trees".</span>     
+        </div>
+        <p>
+          <h4 class="emphasisText2">Trees Compete for Very Limited Resources.</h4> Your forest trees must have sufficient light, water, and nutrients to grow quickly into tall, stout, and defect-free timber. Unfortunately, there is often too much competition among forest trees to maximize growth potential. </p>
+        <p>
+          <h4 class="emphasisText2">Some Trees are Valuable; Many Trees are Not.</h4> Some trees may be worth $0.05 per board foot; other trees may be worth $5 per board foot. Which tree would you rather be growing? The acorns of some oak trees may provide much-needed late winter nutrition for prized wildlife species. The growth habits of other trees may create a "wildlife desert" below. Which tree would you rather be growing? </p>
+        <blockquote>"Some trees may be worth $0.05 per board foot; other trees may be worth $5 per board foot. Which tree would you rather be growing?" </blockquote>
+        <p>
+          <h4 class="emphasisText2">Timber Stand Improvement Focuses Growth to Your Best Trees.</h4> Timber stand improvement selectively removes the least valuable and most damaged trees to focus growth into the best and most valuable trees. Proper timber stand improvement may double the diameter growth rate of your crop trees. This means, depending upon the size of these trees, they may be growing merchantable wood volume three or four times as quickly as before.</p>
+         <h4 class="emphasisText2">Commercial or Noncommercial TSI?</h4> Some timber stand improvements may involve bringing in a logger or timber buyer to salvage your worst trees for modest returns. Other timber stand improvement may involve employing a consulting forester or contractor to deaden worthless trees for a fee. Whether your timber stand improvements are commercial or noncommercial, TSI operations pay off quickly: faster growth rate, better tree species mix, higher quality logs.</p>
+        <div class="learnMore container-fluid">
+          <div class="">
+            <h5 class="text-left">Further Resources...</h5>
+          </div>
+            <div class="innerResourcesText">
+              <a title="Timber Stand Improvement Publication" href="http://mdc.mo.gov/sites/default/files/resources/2010/10/timber_stand_improvement_10-20-10.pdf">Timber Stand Improvement: A Guide for Improving Your Woodlot by Cutting Firewood</a>
+              <p><small>The Missouri Department of Conservation details how you (or a consulting forester) can improve your woods by removing the junk trees to focus growth into your best crop trees.</small></p>
+            </div>  
+        </div>
+        </div>
+        <div class="well">
+        <div id="treeplantinglink"></div>
+        <h2 class="h2TextGreen text-center">Tree Planting & Reforestation</h2>
+          <div class="bodyImageDiv">
+            <img src="images/tree_planting.jpg" alt="Tree Planting in progress" title="Tree Planting & Reforestation" class="img-responsive">
+            <span class="bodyImageDivCaption">Professional expertise can assist you in battling shade, weather, and animals to successfully establish your new forest.</span>
+          </div>
+          <p>
+            <h4 class="emphasisText2">Acreages Large and Small, Wooded or Open.</h4> Member consulting foresters provide tree planting and reforestation services to replant old fields to timber or just introduce a better species mix to your forest. Whether it is 5 acre or 5,000 acres, foresters employ a wide range of equipment
+            and techniques to get the job done.</p>
+          <p>
+            <h4 class="emphasisText2">Bare-root Seedlings, Containerized Trees, or Direct Seeding.</h4> Depending upon the needs of your reforestation and planting effort, consulting foresters can provide advice and expertise about selection of proper planting stock and successful installation of that product. Often, success of your planting
+            is dependent upon a mix of planting stock and tree species properly suited to the range of conditions the site will experience over several establishment years.</p>
+          <p>
+            <h4 class="emphasisText2">Conservation Reserve Program (CRP)</h4> The most common requests for tree planting come from the Conservation Reserve Program, which is a federal Farm Bill program that provides cost-sharing and annual incentives for removing poor farmland from agricultural production. Illinois Consulting Foresters, Inc., members are
+            experienced with requirements of the Conservation Reserve Program and can provide expertise, planning, and planting for your CRP efforts. </p>
+          <h4 class="emphasisText2">Member oresters Employ a Range of Planting Services & Techniques.</h4> Contact your nearest consulting foresters to understand what different planting and reforestation resources they may be able to provide for your effort. </p>
+          <div class="learnMore container-fluid">
+            <div class="">
+              <h5 class="text-left">Further Resources...</h5>
+            </div>
+            <div class="innerResourcesText">
+              <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/nrcs142p2_005233.pdf" title="Iowa NRCS Trees & CRP Publication">Iowa NRCS: Plant Trees with Help from CRP</a>
+              <p><small>This brochure from the USDA Natural Resources Conservation Service details all of the opportunities and benefits of planting trees through the Conservation Reserve Program in Iowa. Illinois has many of the same opportunities available.</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="well">
+          <div id="invasivespecieslink"></div>
+          <h2 class="h2TextGreen text-center">Invasive Species Management</h2>
+          <div class="bodyImageDiv">
+            <img src="images/invasive_species_management.jpg" alt="forest overtaken by invasive plants" title="Invasive Plant Management" class="img-responsive">
+            <span class="bodyImageDivCaption">Unmanaged invasive vines, shrubs, grasses, and trees can quickly ruin a forestland.</span>
+          </div>
+          <div>
+            <p>
+              <h4 class="emphasisText2">Aggressive Plants, without Pests or Competitors.</h4> A number of invasive and exotic species threaten Illinois woodlands: bush honeysuckle, autumn olive, Japanese honeysuckle, multiflora rose, garlic mustard, buckthorn, Oriental bittersweet, Japanese stiltgrass, and many others. These plants
+              from other areas of the globe do not have natural pests or competitors in Illinois. These plants have quickly taken over many of our forests.</p>
+            <p>
+              <h4 class="emphasisText2">Invasive Species can Destroy a Forest.</h4> Invasive plant species crowd out native plants and shade out young trees. After a few years of uncontrolled infestation, a forest may be completely unable to regenerate itself. </p>
+            <blockquote>"After a few years of uncontrolled infestation, a forest may be completely unable to regenerate itself."</blockquote>
+            <p>
+              <h4 class="emphasisText2">An Aggressive, Committed, and Sustained Effort to Restore Your Forest.</h4> An invasive species eradication effort requires the right tools and expertise, often over multiple years. Member foresters can provide the right plan, the right technical expertise, and the right equipment to restore your forest. Native
+              wildflowers and young oak trees can thrive again.</p>
+          </div>
+          <div class="learnMore container-fluid" style="clear:both;">
+            <div class="">
+              <h5 class="text-left">Further Resources...</h5>
+            </div>
+            <div class="innerResourcesText">
+              <a href="http://www.rtrcwma.org/">River to River Cooperative Weed Management Area</a>
+              <p><small>Learn more about fighting invasive plants from this Illinois-based conservation organization.</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="well">
+          <div id="otherserviceslink"></div>
+          <h2 class="h2TextGreen text-center">Other Forestry Services</h2>
+          <div class="bodyImageDiv">
+            <img src="images/other_forestry_services.jpg" alt="forester inventorying Illinois forest" title="Other Forestry Services" class="img-responsive">
+            <span class="bodyImageDivCaption">Illinois consulting foresters provide a variety of additional services related to forest and land management.</span>
+          </div>
+          <p>
+            <h4 class="emphasisText2">Prescribed Burning.</h4> Prescribed burning may be a useful forestry tool to encourage success of some young trees, improve wildlife habitat conditions, and clear weeds and brush. Your nearest consulting forester can determine if prescribed burning is for you.</p>
+          <p>
+            <h4 class="emphasisText2">Wildlife Habitat Improvement.</h4> Practicing forestry is often the best wildlife habitat management. Forestry provides critical light for increased browse and increased cover. Forestry practices can be targeted to encourage more wildlife-friendly trees and shrubs. Consider
+            directing your consulting forester to incorporate wildlife management into your forest management plan.</p>
+          <p>
+            <h4 class="emphasisText2">Mapping.</h4> Many consulting foresters provide additional mapping services for your land. Whether you are interested in mapping your management activities or your trails and hunting stands, let your consulting forester know that you would like a map of
+            your forest property.</p>
+          <p>
+            <h4 class="emphasisText2">American Tree Farm System Certification.</h4> The mark of sustainable forestry, American Tree Farm System certification is a free and voluntary program that recognizes your forest practices as professionally and sustainably managed. Inquire with your consulting forester about getting
+            your free Tree Farm sign and recognition. </p>
+          <div class="learnMore container-fluid">
+            <div class="">
+              <h5 class="text-left">Further Resources...</h5>
+            </div>
+            <div class="innerResourcesText">
+              <a href="https://www.treefarmsystem.org/" title="American Tree Farm System">American Tree Farm System</a>
+              <p><small>Learn more about certifying your forest as sustainably-produced through the American Tree Farm System.</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="servicesDivRight" class="col-xs-12 col-m4d-4 col-sm-4 col-lg-4">
+        <div id="faqAdj"></div>
+        <h1 class="h1TextGreen text-left">faq</h1>
+        <div class="well greenWell">
+          <h3 class="h2TextWhite text-center">About Consulting Foresters</h3>
+          <h4 class="emphasisText3">1. What is a consulting forester?</h4>
+          <p>A consulting forester is an individual who provides professional consulting and contracting services for a fee to forest landowners. </p>
+          <h4 class="emphasisText3">2. How will my consulting forester charge for their services?</h4>
+          <p>Consulting foresters have a range of fee schedules that may include hourly, commission, or per-job fees. Inquire with your nearest consulting foresters about their schedule of fees. </p>
+          <h4 class="emphasisText3">3. What is the difference between a forester and a logger?</h4>
+          <p>A logger is a business person trained and experienced with timber harvesting whose primary goal is to buy the best timber at the lowest price. A consulting forester is a professional trained and experienced in the art and science of forest management
+            whose primary goal is to represent you, the forest landowner.</p>
+          <h4 class="emphasisText3">4. What education and experience can I expect from a consulting forester?</h4>
+          <p>Illinois Consulting Foresters, Inc., members are required to have a four-year bachelor's degree from a Society of American Foresters-accredited university or a two-year technical degree in forestry plus four years of relevant experience. </p>
+          <h4 class="emphasisText3">5. What services should I expect from my local consulting foresters?</h4>
+          <p>Consulting foresters provide a range of consulting services such as timber sale marketing, timber inventory and appraisal, and development of forest management plans. Consulting foresters may also provide contracting services such as tree planting,
+            timber stand improvement, invasive species management, and more. </p>
+          <h4 class="emphasisText3">6. What acreage sizes do consulting foresters serve?</h4>
+          <p>If you own more than 5 acres, it is likely that a professional consulting forester can provide value to you.</p>
+          <h4 class="emphasisText3">7. What about insurance, licenses, and certifications?</h4>
+          <p>Consulting foresters carry a range of insurance (e.g., general liability, worker's compensation), licenses (e.g., Illinois Pesticide Applicator), and qualification (e.g., Certified Forester, Certified Prescribed Burn Manager). </p>
+        </div>
+        <div class="well greenWell">
+          <h3 class="h2TextWhite text-center">Selling Timber</h3>
+          <h4>1. How much is my timber worth?</h4>
+          <p>Timber value is dependent upon a number of factors including species, tree size, quality, acreage, and accessibility. If you own more than 5 acres of timber, it is likely your forest contains significant timber value. If you are considering
+            selling timber, you should have your timber evaluated and marketed by an independent professional forester familiar with Illinois timber markets and multiple local timber buyers.</p>
+          <h4>2. How are the timber markets?</h4>
+          <p>Timber markets are highly variable and dependent upon species and grade of timber to be sold. A professional consulting forester is the best source of advice about the impact of timber market prices on your timberland. </p>
+          <h4>3. A logger has offered me a check for my timber. What should I do?</h4>
+          <p>It is likely you have received an offer for your timber because you have some timber of value. It is also likely that another logger or timber buyer would be interested in competitively bidding on your timber. A consulting forester can market
+            your timber to multiple timber buyers who have access to different markets and varying operating costs.</p>
+          <h4>4. What should I expect from my consulting forester during a timber harvest?</h4>
+          <p>Generally, a consulting forester will mark and tally all timber to be cut in accordance with your goals, advertise your timber to multiple buyers, assist with completing a written contract between you and the successful timber buyer, coordinate
+            the harvest plan with the buyer, monitor the harvest, and ensure the area is cleaned up according to the terms of the contract.</p>
+          <h4>5. Will my timber harvest make a mess?</h4>
+          <p>Timber harvests vary from neat, low-impact operations to messy clearcuts. A consulting forester can tailor your timber harvest to suit your goals, while providing the benefits and costs of each approach.</p>
+          <h4>6. How will a timber harvest affect wildlife and hunting?</h4>
+          <p>Timber harvests are highly beneficial to many types of wildlife because they introduce new sources of food and cover. Your consulting forester can assist with targeting your harvest for maximum wildlife benefit for your preferred wildlife species. </p>
+          <h4>7. Are my yard trees valuable?</h4>
+          <p>Generally, at least 5 acres of timber are necessary for a successful timber harvest. Consider contacting a <a href="http://www.isa-arbor.com/findanarborist/findanarborist.aspx">Certified Arborist</a> for care of yard trees. </p>
+        </DIV>
+        <div class="well greenWell">
+          <h3 class="h2TextWhite text-center">Forest Management Plans</h3>
+          <h4>1. Will a forest management plan lower my taxes?</h4>
+          <p>Maybe or maybe not. It depends upon what your specific situation is. However, you can be certain that a properly certified forest management plan is a way to keep your forest taxes as low as is possible in Illinois.</p>
+          <h4>2. If I get a forest management plan, am I required to implement my plan?</h4>
+          <p>A plan is an inventory of your forest resources and a flexible guide to implement your forestry goals. If you are enjoying property tax benefits from an Illinois Forestry Development Act plan, then you must demonstrate you are managing your
+            timberland for timber production. Be sure to work with consulting forester to develop a practical and realistic plan to accomplish your goals.</p>
+        </div>
+        <div class="well greenWell">
+          <h3 class="h2TextWhite text-center">Conservation Programs</h3>
+          <h4>1. What conservation programs may be available for my forestland?</h4>
+          <p>There are a large number of conservation programs targeted to forestlands owned by individuals. A few sources to investigate would be the Illinois Forestry Development Act (Illinois DNR), Conservation Reserve Program (Farm Service Agency), Conservation
+            Reserve Enhancement Program (Farm Service Agency), Environmental Quality Incentives Program (NRCS), Conservation Stewardship Program (NRCS), Regional Conservation Partnership Program (NRCS), Partners for Fish and Wildlife (U.S. Fish and Wildlife
+            Service), and the Illinois Recreational Access Program (Illinois DNR). These programs provide a range of property tax benefits, conservation rental payments, and cost-share incentives for your forestland. A consulting forester can help guide
+            you through each of these programs.</p>
+
+          <h4>2. What about planting new forest?</h4>
+          <p>If you are planting new forest on old cropland, the Conservation Reserve Program provides exceptionally good incentives to add to your forestland, including annual rental payments and cost-share assistance. If you are planting new forest elsewhere, or just underplanting a few desirable trees, the cost-sharing
+            programs listed above will also limit your out-of-pocket cost.
+        </div>
+        <div class="well greenWell">
+          <h3 class="h2TextWhite text-center">Timber Taxes</h3>
+          <h4>1. What timber taxes should I be aware of?</h4>
+          <p>As a timber owner, you are subject to Illinois 4% timber harvesting tax, income tax on timber sold, and property tax. Fortunately, proper planning with your tax professional and a consulting forester can assist you in minimizing your tax liability.</p>
+          <h4>2. How can I minimize timber-related taxes?</h4>
+          <p>Timber harvesting tax: If you plan to improve your forestland afterward, a refund of timber harvesting tax may be possible. Income tax: Proper tax planning and timber inventory to establish a cost basis of your timber may facilitate the lowest
+            capital gains tax rates. Property tax: An Illinois Forestry Development Act forest management plan guarantees exceptionally low property tax rates.</p>
+        </div>
+        <div class="well greenWell">
+          <h3 class="h2TextWhite text-center">Timber Stand Improvement</h3>
+          <h4>1. Why would I cut trees to make my forest better?</h4>
+          <p>Most Illinois forests are overcrowded and heavily populated with trees of low desirability. Thinning junk trees from your forest can focus limited sun, water, and nutrients into your best, most valuable trees. After timber stand improvement, weed trees worth
+            worth $0.05 per board foot should not be stealing resources from trees worth $5 per board foot.</p>
+          <h4>2. How do I know if my forest needs timber stand improvement?</h4>
+          <p>Most every forest can be improved by a bit of timber stand improvement. Forests with a large number of trees in the 4"-12" diameter range are perfect for timber stand improvement. Other forest characteristics that may benefit are heavily damaged
+            forests or forests where desirable new seedlings on the forest floor are suppressed by dark shade.</p>
+        </div>
+      </div>
+    </div>
+    <!-- end #content2 -->
+    <div id="content3" class="row">
+      <div class="col-xs-12 col-sm-12 col-md-1 col-md-1"></div>
+      <div id="fm101" class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+        <h1 class="h1TextGreen text-left">
+          more
+        </h1>
+        <div class="well">
+          <div id="fm101Adj"></div>
+          <h2 class="text-center moreH2">Forest Management 101</h2>
+          <p class="text-center"><em>New to forest management? This guide is intended for you, whether you own 5 acres or 5,000 acres.</em></p>
+          <h3 class="h2TextGreen">Step 1: Inventory & Assess Your Forest</h3>
+          <div class="bodyImageDiv2" style="clear: right;">
+            <img src="images/forester_in_woods.jpg" class="img-responsive" alt="Illinois forester assessing and inventorying forest" title="Forester Assessing Illinois Forest">
+            <span class="bodyImageDiv2Caption">For new forest owners, discussing your goals and your land with a professional consulting forester is a good place to start.</span>
+          </div>
+          <h4 class="emphasisText2">Find a Good Forester</h4>
+          <p>First, a good forester has a university or technical degree from an accredited forestry program. Second, a good forester also has experience working with forests, forestry issues, timber buyers, and government forestry programs in your region. Third, a forester
+            is an independent professional whose interests lie with you, not with a timber company or another third party. If your forester has a degree, experience, and independence, you are on the right track. Illinois Consulting Foresters, Inc., member foresters provide these
+            critical attributes for your forest management needs.</p>
+          <p>Depending upon the job, there are several other considerations to determine whether you have the right forester. Does your forester carry the appropriate liability insurance, worker's compensation insurance, and licenses? Can they provide a
+            list of satisfied references? Are they familiar addressing your particular forestry issues?
+          </p>
+          <p>There are several critical issues to discuss with your prospective forester.
+            <h5 class="text-center" style="display: inline;"><strong>Goals for your Timberland</strong></h5>
+            <p>Do you prefer to manage only for timber value? Or would you prefer to manage your forest for multiple goals, such as wildlife, recreation, and aesthetics while also harvesting a few logs along the way?
+            </p>
+            <h5 class="text-center" style="display: inline;"><strong>About Your Forestland</strong></h5>
+            <p>Let your forester know what your land looks like. How many acres? Do you know any of the dominant tree species? Have you harvested it before? It is hilly land or land that flood frequently? </p>
+            <h5 class="text-center" style="display: inline;"><strong>How Your Forester Works</strong></h5>
+            <p>Finally, you may want to know more about how your forester works. How quickly will they be out to take a look? Will they walk the land with you? What is their fee schedule? Do they charge on an hourly basis or a per-plan basis?</p>
+            <h4 class="emphasisText2">Develop a Plan</h4>
+            <p>Work with a forester to develop a 10-year forest management plan for you. This will provide an inventory and appraisal for your existing timber: what you have and approximately how much it is worth to a timber buyer. Your plan should also
+              contain suggested management actions you can take to profit from and improve your timber over the upcoming years. A management plan is not a one-size-fits-all approach. Make sure the plan realistically meets your goals and is something you
+              can accomplish over the timeframe. Perhaps you ask your forester to identify management actions by their priority for your forestland.</p>
+            <h4 class="emphasisText2">Do the "Paperwork"</h4>
+            <p>Once the plan is complete, your work is not over. If you plan to pursue the generous property tax breaks for forestland owners, you will likely need to submit your plan to the Illinois Department of Natural Resources. If you are a new owner
+              or you have recently inherited your land, ensure you and your forester have establish your cost-basis to offset future capital gains taxes from the sale of timber. If you plan to pursue cost-share incentives to improve your forestland with forest improvement practices
+              such as timber stand improvement and tree planting, now is the time. Discuss the best cost-share programs with your consulting forester, and submit your application to the appropriate government agency.</p>
+            <h3 class="h2TextGreen">Step 2: Actively Manage Your Forest</h3>
+            <div class="bodyImageDiv2" style="clear: right;">
+              <img src="images/crowded_oak_timber.jpg" alt="dead oak trees caused by overcrowding" title="Crowded Oak Trees Dying Back" class="img-responsive">
+              <span class="bodyImageDiv2Caption">Look up at your tree tops. Are your best trees getting sufficient sunlight? You can often improve your timber by thinning crowded forests like this one, before trees begin to deteriorate and die back due to heavy competition.</span>
+            </div>
+            <h4 class="emphasisText2">Harvest Your Timber</h4>
+            <p>Maybe you are the lucky one with large, mature, high-quality trees ready to be harvested. Work with your forester to decide how you will sell the timber. How much timber will you harvest? How will it be marketed, bid out, and contracted? Most importantly, how
+              will you improve your remaining forest, and how will you plan for establishing the next generation of timber? </p>
+            <p>More likely, you have a few nice trees and a few damaged and declining trees that may be salvaged to make room for the next generation of trees. Consider a timber harvest aimed at improving your woods, while generating a bit of side income.
+              Work with your forester to develop a plan of action to get those low-value trees out of your woods. One of the most limited resources in Illinois forests is light; by selling and removing your declining trees, you may be able to reduce the
+              shade that is slowing down your best young and mid-sized trees.</p>
+            <p>Perhaps your forest is mostly young timber with limited possibilities for commercial improvement. There is still plenty you can do to improve your forest for that eventual harvest, not to mention all those other benefits: wildlife habitat,
+              hiking and camping, relaxation, firewood, water quality, and more.</p>
+            <h4 class="emphasisText2">Improve Your Forest</h4>
+            <p>Timber stand improvement, tree planting, prescribed burning, invasive species management are all tools commonly used to improve forestland. Your forester can provide expertise about what is appropriate. Thin out small junk trees that are crowding
+              your nice black walnut and oak trees. Plant new trees in clearings where they will thrive. That impassible area overrun by invasive bush honeysuckle? Consider clearing it out and maintaining it with a prescribed fire every now and then.
+              </p>
+            <p>Work with your consulting forester to identify the highest priorities that will pay off most quickly. Every woodland has an area that could use some improvement, but the challenge is identifying the most important, high-priority areas. Forest
+              management is a marathon, not a sprint. </p>
+            <h3 class="h2TextGreen">Step 3: Enjoy Your Forest</h3>
+            <div class="bodyImageDiv2" style="clear: right;">
+              <img src="images/enjoying_woods.jpg" class="img-responsive" alt="Illinois couple enjoying their woods" title="Enjoy Your Forest">
+              <span class="bodyImageDiv2Caption">Take a chance to enjoy your woods and your improvement work. Good forest management is a long-term endeavor!</span>
+            </div>
+            <h4 class="emphasisText2">Hunt, hike, camp, search for mushrooms, watch wildlife, but savor the progress.</h4>
+            <p>Leave the work to your forester, and enjoy your land! Put up your hunting stand next to that wildlife clearing. Hike along the old logging trails. Camp in a new clearing, around a campfire burning forest thinnings. Search for mushrooms; perhaps
+              your forester will give you a few tips about where to look. Watch the wildlife come and go, as they appreciate the variety of habitat types that good forest management creates.</p>
+            <p>As you enjoy your new woodland, savor the progress. Those trees released from competition by timber stand improvement? Watch them double in size. The weed thicket brought under control by invasive species management? Wander through it on
+              a spring day, as spring ephemeral wildflowers poke through the leaf little. Enjoy it as the small, previously-shaded oak seedlings reach for the sky. That stately grove of white oaks on the hilltop that was thinned out? Take a rest, and listen to the deer and squirrels munch on their favored acorns.</p>
+            <h3 class="h2TextGreen">Step 4: Do It Again</h3>
+            <p>After 10 years of forest management, take a break to reassess. Meet with your forester. Update your plan. Consider what improvement priorities are next. Review the paperwork. File tax forms and cost-share applications as necessary. Review
+              timber harvesting plans. </p>
+            <p>When it comes time to sell the land, remember that you are not just selling your land assets. You are also selling a valuable, carefully cultivated crop of timber. Even if you have not had a chance to harvest yet, you are selling a better and more valuable
+              forest: better wildlife habitat, more recreational potential, and higher timber value.</p>
+            <div style="clear:both;"></div>
+        </div>
+        <!--end #fm101 -->
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-1 col-md-1"></div>
+    </div>
+    <!-- end #content3 -->
+    <div id="content4" class="row">
+      <div id="resourcesAndMembershipDiv" class="">
+        <div id="resourcesDiv" class="text-center col-xs-12 col-sm-8 col-md-8 col-lg-8">
+          <div id="resourcesAdj"></div>
+          <h2 class="text-center moreH2">Resources</h2>
+          <div class="well">
+            <h4>Government Agencies</h4>
+            <a href="https://www.dnr.illinois.gov/conservation/Forestry/Pages/default.aspx">Illinois Department of Natural Resources - Forest Resources</a>
+            <Br><a href="https://www.nrcs.usda.gov/wps/portal/nrcs/site/il/home/">USDA Natural Resources Conservation Service</a>
+            <Br><a href="https://www.fsa.usda.gov/state-offices/Illinois/index">USDA Farm Service Agency</a>
+            <Br><a href="https://www.fws.gov/midwest/partners/">US Fish and Wildlife Service - Partners for Fish and Wildlife</a>
+            <Br><a href="http://www.aiswcd.org/">Association of Illinois Soil and Water Conservation Districts</a>
+
+            <h4>University of Illinois Extension</h4>
+            <a href="https://web.extension.illinois.edu/forestry/home.html">University of Illinois Extension Forestry Page</a>
+            <Br><a href="http://callb4ucut.com/illinois/">Illinois Timber Prices Bulletin</a>
+
+            <h4>Illinois Forestry Association</h4>
+            <a href="http://www.ilforestry.org/FDA-News">IFA Forestry Alerts for Landowners</a>
+            <Br><a href="https://web.extension.illinois.edu/forestry/il_timber_prices/index.cfm">Illinois Forestry Association Site</a>
+
+            <h4>American Forest Foundation</h4>
+            <a href="https://www.treefarmsystem.org/">American Tree Farm System</a>
+            <Br><a href="https://mylandplan.org/">MyLandPlan.org</a>
+
+            <h4>Other Helpful Organizations</h4>
+            <a href="http://callb4ucut.com/illinois/">Call Before You Cut, Illinois</a>
+            <Br><a href="http://www.nwtf.org/about/state/illinois">National Wild Turkey Federation</a>
+            <Br><a href="http://www.rtrcwma.org/">River to River Cooperative Weed Management Area</a>
+            <Br><a href="http://www.sipba.org/home.html">Southern Illinois Prescribed Burn Association</a>
+
+            <h4>Forest Management Resources for Landowners</h4>
+            <a href="http://extension.missouri.edu/p/G5051">Selling Timber: What the Landowner Needs to Know</a>
+            <Br><a href="http://callb4ucut.com/illinois/">Indiana Forest Improvement Handbook</a>
+            <Br><a href="http://forestkeepers.org/wp-content/uploads/2013/05/Forest-Management-Guide.pdf">Forest Management for Missouri Landowners</a>
+          </div>
+        </div>
+        <!-- end #resourcesDiv -->
+        <div id="membershipDiv" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <div id="membershipAdj"></div>
+          <h2 class="text-center moreH2">Membership</h2>
+          <div class="well">
+            <p>Prospective member foresters should submit a membership application by email or U.S. mail. Required information includes:</p>
+            <ul>
+              <li>Name</li>
+              <li>Address</li>
+              <li>Business Name</li>
+              <li>Email</li>
+              <li>Website</li>
+              <li>Forestry Degree Earned and Year</li>
+              <li>Forestry Experience</li>
+            </ul>
+            <p>Annual Dues are $60. Due can be paid in person or by check by U.S. mail.</p>
+            <p><a href="docs/bylaws.pdf">Bylaws</a></p>
+            <p><a href="docs/constitution.pdf">Constitution</a></p>
+          </div>
+          <div id="contactAdj"></div>
+          <h2 class="text-center moreH2">Contact</h2>
+          <div class="well">
+            <p>Michael C. Karcher, President
+              <Br>RR1 Box 149<br>Dahlgren, Illinois 62828<br>618-736-2341<br><a href="mailto: karcher@hamiltoncom.net">karcher@hamiltoncom.net</a></p>
+          </div>
+        </div>
+        <!-- end #membershipDiv -->
+      </div>
+    </div>
+    <!-- end #content4 -->
+    <div id="bottomBanner" class="row">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center quote ">
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center bannerIcon">
+        <a href="#"><img src="images/logo_icon_color.png"></a>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left" id="rightBottomBanner"></div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center bottomLinks"><a href="#aboutAdj">about</a> | <a href="#forestersAdj">foresters</a> | <a href="#servicesAdj">services</a> | <a href="#newsAdj">news</a> | <a href="#faqAdj">faq</a> | <a href="#fm101">forest management 101</a> | <a href="#resourcesAdj">resources</a>        | <a href="#membershipAdj">membership</a> | <a href="#contactAdj">contact</a> </div>
+    </div>
+    <!-- end #bottomBanner -->
+    <div id="footer" class="row">
+      <div class="text-center">
+        <small>Copyright 2017 - <span id="date"></span>. Designed by <a href="https://www.linkedin.com/in/jake-hendee-4aabaa33">Jake Hendee</a>.</small>
+      </div>
+    </div>
+    <!-- end #footer -->
+  </div>
+  <!-- end #pageContainer -->
+</body>
+</html>

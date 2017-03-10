@@ -1,0 +1,714 @@
+
+
+body {font-family: 'Roboto', sans-serif; }
+
+@media (min-width: 768px) {
+		   
+    .fixed.navbar-nav>li>a {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+
+        
+    }
+    
+    #rightNavDiv>ul, #leftNavDiv>ul {border-top: 1px solid white!important; border-bottom: 1px solid white;}
+
+    .fixed.navbar-default>li>a{
+		  
+    }
+
+    .fixed.navbar .fixed.navbar-collapse {
+        text-align: center;
+    }
+}
+
+
+
+@media only screen and (max-width: 766px) {
+.collapsing, .in {background-color: #f7f7f7;}
+.collapsing ul li a, .in ul li a {color:#016a3a!important; line-height:1!important;}
+.collapsing ul li a:hover, .in ul li a:hover {color: black!important; background-color: lightgray!important; }
+#leftNavDiv, #rightNavDiv {margin-top: 0px!important;}
+#RightNavUL, #LeftNavUL {margin: 0!important; border: none!important}
+
+}
+
+.topBannerNavCollapse ul li a:hover, .topBannerNavCollapse ul li a:focus{
+	background-color: lightgray;
+	color: #016a3a!important;
+}
+
+.fixedNav ul li a:hover, .fixedNav ul li a:focus{
+	background-color: lightgray!important;
+	color: #016a3a!important;
+}
+
+.centerThis a{
+	color: white;
+	font-weight: bold;
+}
+
+
+
+
+.navbar-fixed-top .navbar-collapse {
+    max-height: 9999px; 
+}
+
+.nav-button{
+	background-color: pink;
+}
+
+#fixedTopToggledVis{
+	position:fixed;
+	z-index: -1;
+}
+
+.navbar {
+	z-index: 9999;
+}
+
+.fixed.navbar-nav{
+	border: none;
+}
+
+.fixed.navbar-nav>li>a {
+
+	color: white;
+	background: none;
+	
+}
+
+.collapse ul>li>a{ line-height:1!important;  }
+
+
+
+
+
+
+
+.navbar-fixed-top {
+	font-family: 'Montserrat', sans-serif; 
+	color: white;
+	height: 50px;
+	background-color:#016a3a;
+	border: none;
+	box-shadow: 0px 1px 1px 1px grey;
+	min-height:50px;
+}
+
+.navbar-fixed-top a{
+	color: white;
+}
+
+#navHeader{
+	height: 120px;
+	background-color: rgba(0,0,0, .6);  /*rgba(1,106,58, .8);*/
+		font-family: 'Montserrat', sans-serif; 
+	color: white;
+	}
+	
+#navHeader a {
+	color: white;
+	}
+	
+#leftNavDiv, #rightNavDiv {
+	margin-top: 30px;
+	color: white;
+	
+
+}
+
+#leftNavDiv{
+	margin-right: 0;
+}
+	
+#RightNavUL, #LeftNavUL {
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+}
+	
+button.navbar-toggle {
+	background-color: white;
+}
+	
+
+
+#actualContent1 {
+
+	
+}
+
+
+
+.innerAboutDiv{
+	
+	padding-left: 6%;
+	
+	
+	
+	
+	
+}
+
+
+#aboutDiv{
+	padding-bottom: 5px;	
+
+	padding-left: 5px;
+	padding-top: 0;
+}
+
+.insideAboutDiv{
+
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+
+}
+
+
+#mapDiv{
+	padding-bottom: 5px;	
+	padding-right: 5px;
+	padding-left: 0px;
+	padding-top: 5px;
+	
+}
+
+#insideMapDiv{
+	background-color: white;
+	padding: 5px;
+}
+
+#innerMapDiv{
+	
+	
+}
+
+#content2{
+
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+}
+
+#logoContainer {
+	width: 100%;
+	height: auto;
+	max-width: 130px;
+	margin: 0 auto;
+}
+
+.navbar-left{
+	margin-left: -15px;
+}
+
+#aboutAdj{
+	margin-top: -50px;
+	height: 50px;
+}
+
+#contactAdj{
+	margin-top: -50px;
+	height: 50px;
+}
+
+#newsAdj{
+	margin-top: -50px;
+	height: 50px;
+}
+
+#membershipAdj{
+	margin-top: -50px;
+	height: 50px;
+}
+
+#resourcesAdj{
+	margin-top: -50px;
+	height: 50px;
+}
+
+#fm101Adj{
+	margin-top: -50px;
+	height: 50px;
+}
+
+#faqAdj{
+	margin-top: -50px;
+	height: 50px;
+}
+
+#servicesAdj{
+	margin-top: -50px;
+	height: 50px;
+}
+
+.bottomLinks a{
+ color: white;
+}
+
+#forestersAdj{
+	margin-top: -50px;
+	height: 50px;
+}
+
+img#logo {
+	width: 100%;
+	height: auto;
+	max-width: 130px;
+	padding-top: 0px;
+	/* green color in logo is #016a3a */
+}
+
+#mapid { 
+	border: 1px lightgray solid;	
+	height: 573px;
+
+	}
+
+#banner2{
+	height: 120px;
+	background-image: url('images/forest.jpg');
+	background-size: cover;
+	max-height: 100%;
+}
+
+h3.emphasisText {
+	color: #d05c00;
+	font-size: 24px;
+	display: inline;
+
+}
+
+
+
+.memberEntries{
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+border-top: 1px solid lightgray;
+clear:both;
+font-size: 13px;
+
+}
+
+
+
+.h2Green{
+	 
+	color: #016a3a;
+	letter-spacing: -0.5px;
+	font-family: 'Montserrat', sans-serif; 
+}
+
+.colorSpan{
+
+letter-spacing: 0px;
+font-weight: bold;
+	
+}
+
+.pText{
+
+	line-height: 1.25;
+	/*letter-spacing: -0.5px;*/
+	font-size: 14px;
+	
+}
+
+div.aboutPic img {
+float:right; 
+max-width: 100px; 
+height: auto; 
+margin-top: 12px;
+}
+
+#topPad{
+	height: 30px;
+	background-color:#016a3a ;
+	overflow: hidden;
+	box-shadow: 0px 1px 1px 1px grey;
+
+	
+}
+
+.well {
+	box-shadow: 1px 1px 1px 1px grey !important;
+}
+
+
+
+img.squarePic {
+height: auto; 
+    width: 100%; 
+
+}
+
+
+
+
+
+#findForesterDiv{
+padding-top: 5px;
+padding-bottom: 5px;
+font-family: 'Montserrat', sans-serif;
+	
+
+}
+
+#findForesterInput{
+border: none;
+
+
+height: 20px;
+
+}
+
+#findForesterButton{
+height: 20px;
+}
+
+#mapBanner{
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+	height: 70px;
+	width: 94%;
+	background: #000000 ;  /*rgba(1,106,58, .8);*/
+	
+	position: absolute;
+	opacity: 0.7;
+	
+	left: 3%;
+	}
+	
+.icon-bar{
+	color: #016a3a!important;
+	background-color: #016a3a!important;
+
+}
+
+#servicesDivRight p{
+	margin-left: 5%;
+	margin-right: 7%;
+	font-size: 13px;
+}
+
+#servicesDivRight a{
+	color: white;
+	text-decoration: underline;
+}
+
+#servicesDivRight a:hover{
+	background-color: lightgray;
+}
+
+.centerThis {
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+#memberList{
+	/*letter-spacing: -.5px;*/
+	padding-bottom: 20px;
+
+	
+}
+
+#timbersaleslink{
+	margin-top: -50px;
+	height: 50px;
+}
+
+#managementplanslink{
+	margin-top: -50px;
+	height: 50px;
+}
+
+#tsilink{
+	margin-top: -50px;
+	height: 50px;
+}
+
+#invasivespecieslink{
+	margin-top: -50px;
+	height: 50px;
+}
+
+#treeplantinglink{
+	margin-top: -50px;
+	height: 50px;
+}
+
+#otherserviceslink{
+	margin-top: -50px;
+	height: 50px;
+}
+
+
+
+
+
+
+#pictureRow{
+	font-family: 'Roboto', sans-serif;
+	padding-right:0;
+	padding-left:0;
+	
+}
+
+.picCell{
+padding: 0;
+border: none;
+margin: 0;
+position: relative;
+border-right: 1px white solid;
+border-bottom: 1px white solid;
+
+}
+
+.h1Text{    
+    bottom: 0;
+    position: absolute; 
+    color: white;   
+    margin: 0 auto; 
+    text-align: center;
+    display: block;
+}
+ 
+ .innerPicCell{
+     position: relative;
+     overflow: hidden;
+     
+     
+}
+ 
+ .centerThis{
+ 	background: none repeat scroll 0 0 #000000;
+    opacity: 0.6;
+
+ 	min-height: 50%;
+    padding: 5%;
+	
+   max-height: 100%;
+    min-height: 100%;
+ }
+ 
+ #servicesDivLeft{
+
+	font-family: 'Roboto', sans-serif;
+	background-color: white;
+	color: black;
+
+ }
+ 
+  #servicesDivRight{
+  	font-family: 'Roboto', sans-serif;
+  		background-color: white;
+	color: black;
+
+	
+ }
+ 
+ #content3{
+background-color: #EFF4F1; 
+ 
+ }
+ 
+ #content4{
+
+ }
+
+ .mapwell{
+ 	clear:both;
+ 	overflow: auto;
+ 	margin: 3%;
+ }
+  .h1TextGreen{
+	color: #016a3a;
+	font-size: 70px;
+	letter-spacing: -4px;
+	font-family: 'Montserrat', sans-serif;
+
+ }
+ 
+   .h1TextWhite{
+	color: white;
+	font-size: 70px;
+	letter-spacing: -4px;
+	font-family: 'Montserrat', sans-serif;
+
+ }
+ 
+ .h2TextGreen{
+ font-family: 'Montserrat', sans-serif;
+ color: #016a3a;
+ }
+ 
+  .h2TextWhite{
+ font-family: 'Montserrat', sans-serif;
+ color: white;
+ }
+ 
+  .emphasisText2 {
+	color: white;
+	display: inline;
+}
+ 
+ 
+ 
+ .emphasisText2 {
+	color: #d05c00;
+	display: inline;
+}
+
+.greenWell{
+	color: white !important;
+	background-color:  #016a3a !important;
+}
+
+
+.bodyImageDiv{
+	width: 40%; 
+	padding: 2%; 
+	margin: 1%; 
+	float: right; 
+	background-color: white; 
+	border: 1px solid lightgray;
+}
+
+@media (min-width: 1500px) {
+	.bodyImageDiv{
+	width: 25%; 
+	padding: 2%; 
+	margin: 1%; 
+	float: right; 
+	background-color: white; 
+	border: 1px solid lightgray;
+}
+	
+}
+
+
+.bodyImageDivCaption{
+	font-size: 11px; 
+	color: grey;"
+}
+
+.bodyImageDiv2{
+	width: 30%; 
+	padding: 2%; 
+	margin: 1%; 
+	float: right; 
+	background-color: white; 
+	border: 1px solid lightgray;
+}
+
+@media (min-width: 1500px) {
+	.bodyImageDiv2{
+	width: 15%; 
+	padding: 2%; 
+	margin: 1%; 
+	float: right; 
+	background-color: white; 
+	border: 1px solid lightgray;
+}
+	
+}
+
+
+.bodyImageDiv2Caption{
+	font-size: 11px; 
+	color: grey;"
+}
+
+ 
+.learnMore{
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid grey;
+	margin-right: 10%;
+	margin-left: 10%;
+	height: auto;
+	clear: both;
+}
+
+.learnMore h5{
+	font-family: 'Montserrat', sans-serif;
+	color: #016a3a;
+}
+
+.innerResourcesText {
+	color: black;
+}
+
+img#purdueFNR{
+	max-height: 100px;
+	max-width: 75px;
+}
+
+.imgContain{
+	overflow: hidden;
+}
+
+.moreH2 {
+	font-family: 'Montserrat', sans-serif;
+	color: #016a3a;
+}
+
+#bottomBanner {
+	background-color: #016a3a;
+	color: white;
+	height: 110px;
+	border-bottom: 1px white solid;
+font-family: Montserrat, sans-serif;
+font-size: 12px;
+position: relative;
+}
+
+#footer {
+	background-color: black;
+	color: white;
+	height: 15px;
+	font-family: Montserrat, sans-serif;
+	font-size: 11px;
+	padding: 2px;
+}
+
+.quote{
+padding-top: 25px;
+padding-bottom: 25px;
+font-size: 12px;
+}
+
+.bannerIcon img{
+	height: 55px;
+	margin-top: 20px;
+	width: auto;
+}
+
+.bottomLinks{
+font-size: 10px;
+color: white;
+padding-bottom: 4px;
+position: absolute;
+bottom: 0;
+}
+
+
+
+
+
+
+/*img#pic{
+	height: auto;
+	width: 100%;
+	padding-right: 0px;
+padding-left: 0px;
+}*/
+
+
+
+
+
+
+	file:///home/jhendee/Desktop/icf_web/images/tree_planting.jpg
