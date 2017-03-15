@@ -51,20 +51,6 @@ var foresters = [
 	},
 	{
 		"firstName" : "Mark",
-		"lastName" : "Herman",
-		"company": "Long Forestry Consultation", 
-		"address1" : "PO Box 288",
-		"city": "Harrisburg",
-		"state": "Illinois",
-		"zip": "62946",
-		"phone": "618-893-2307", 
-		"email": "mark@longforestry.com",
-		"website": "www.longforestry.com",
-		"lat" : "37.738531", 
-		"lng": "-88.540520" 
-	},
-	{
-		"firstName" : "Mark",
 		"lastName" : "Holmgren",
 		"company": "TimberMark", 
 		"address1" : "120 Pearson Road",
@@ -80,7 +66,7 @@ var foresters = [
 		"firstName" : "Michael C.",
 		"lastName" : "Karcher",
 		"company": "Karcher's Forestry Services", 
-		"address1" : "RR1 Box 149",
+		"address1" : "4731 Dahlgren Road E",
 		"city": "Dahlgren",
 		"state": "Illinois",
 		"zip": "62828",
@@ -124,7 +110,7 @@ var foresters = [
 		"state": "Illinois",
 		"zip": "62889",
 		"phone": "618-265-3286", 
-		"email": "jnewcomb2@juno.com",
+		"email": "newcomb.joe@gmail.com",
 		"lat" : "37.954003", 
 		"lng": "-88.176699" 
 	},
