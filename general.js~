@@ -36,21 +36,21 @@ $(window).scroll(function() {
 		var lastNameSpan = foresters[k].lastName + "</div><div class='text-left col-xs-12 col-sm-9 col-md-9 col-lg-9'>";
 		var companySpan;
 		 if(foresters[k].company !== undefined){
-			companySpan = foresters[k].company + " | " 
+			companySpan = foresters[k].company + " - " 
 		} else {
 			companySpan = "";		
 		}
-		var address1 = foresters[k].address1 + " | ";
-		var cityStateZip = foresters[k].city + ", " + foresters[k].state + " " + foresters[k].zip + " | ";
+		var address1 = foresters[k].address1 + " - ";
+		var cityStateZip = foresters[k].city + ", " + foresters[k].state + " " + foresters[k].zip + " - ";
 		var phoneSpan = foresters[k].phone;
 		var emailSpan;
 		 if(foresters[k].email !== undefined){
-			emailSpan = "  | <a href='mailto:" + 	foresters[k].email + "?subject=From the Illinois Consulting Foresters Website&body=Hello, I found you on the Illinois Consulting Foresters website, and I would like to know more about your forestry services.'>"+foresters[k].email+"</a>"
+			emailSpan = "  - <a href='mailto:" + 	foresters[k].email + "?subject=From the Illinois Consulting Foresters Website&body=Hello, I found you on the Illinois Consulting Foresters website, and I would like to know more about your forestry services.'>"+foresters[k].email+"</a>"
 		} else {
 			emailSpan = "";		
 		}
 		if(foresters[k].website !== undefined){
-			websiteSpan = "  | <a href='http://" + 	foresters[k].website + "'>"+foresters[k].website+"</a>";
+			websiteSpan = "  - <a href='http://" + 	foresters[k].website + "'>"+foresters[k].website+"</a>";
 		} else {
 			websiteSpan = "";		
 		}
